@@ -44,9 +44,6 @@ public class UserServiceImpl implements UserService {
     public UserDto updateUser(UserDto userDto) {
        Optional<User> users = userRepo.findById(userDto.getAccountNumber());
        User user = users.get();
-       /*user.setName(userDto.getName());
-       user.setEmail(userDto.getEmail());
-       user.setMobNumber(userDto.getMobNumber());*/
         modelMapper.map(userDto, user);
        User savedUser = userRepo.save(user);
        return modelMapper.map(savedUser, UserDto.class);
