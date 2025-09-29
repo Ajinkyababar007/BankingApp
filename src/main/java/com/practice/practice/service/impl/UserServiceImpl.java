@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
         List<UserDto> dtos = allUsers.stream()
                 .map(entity -> modelMapper.map(entity, UserDto.class))
                 .collect(Collectors.toList());
-        //Comment added
         return dtos;
     }
 
